@@ -17,11 +17,16 @@ const Contact = () => {
 
     return (
         <motion.main
-        initial = {{opacity: 0, y: 50}}
-        animate = {{opacity: 1, y: 0}}
-        transition={{duration: 0.8}}
-        className='flex flex-wrap mt-12 ml-4 mb-5'>
-            <div className={`basis-1/2 sm:basis-1/2 md:basis-1/3 mb-4 ${isMobile < 640 && 'sm:basis-full'}`}>
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className='flex flex-wrap mt-12 ml-4 mb-5'>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.9 }}
+                whileInView={{ opacity: 1 }}
+                className={`basis-1/2 sm:basis-1/2 md:basis-1/3 mb-4 ${isMobile < 640 && 'sm:basis-full'}`}>
                 <h1 className='text-lg mb-2 font-normal'>CENTERS</h1>
                 <hr className='w-3/4 border border-solid border-gray-200 mb-2' />
                 <ul className='ml-4'>
@@ -38,8 +43,13 @@ const Contact = () => {
                     <li className='list-item list-disc ml-2 hover:text-gray-600 hover:opacity-80'><a href='https://www.cdac.in/index.aspx?id=SL'>Silchar</a></li>
                     <li className='list-item list-disc ml-2 hover:text-gray-600 hover:opacity-80'><a href='https://www.cdac.in/index.aspx?id=TVM'>Thiruvananthapuram</a></li>
                 </ul>
-            </div>
-            <div className={`basis-1/2 sm:basis-1/2 md:basis-1/3 mb-4 ${isMobile < 640 && 'sm:basis-full'}`}>
+            </motion.div>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.9 }}
+                whileInView={{ opacity: 1 }}
+                className={`basis-1/2 sm:basis-1/2 md:basis-1/3 mb-4 ${isMobile < 640 && 'sm:basis-full'}`}>
                 <h1 className='text-lg mb-2 font-normal'>LINKS</h1>
                 <hr className='w-3/4 border border-solid border-gray-200 mb-2' />
                 <ul className='ml-4'>
@@ -55,18 +65,26 @@ const Contact = () => {
                     <li className='list-item list-disc ml-2 hover:text-gray-600 hover:opacity-80'><a href='/Achievement'>Achievement</a></li>
                     <li className='list-item list-disc ml-2 hover:text-gray-600 hover:opacity-80'><a href='/Alliance'>Alliance</a></li>
                 </ul>
-            </div>
-            <div className={`basis-full sm:basis-full md:basis-1/3 mb-4 ${isMobile < 640 && 'sm:basis-1/3'}`}>
+            </motion.div>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.9 }}
+                whileInView={{ opacity: 1 }}
+                className={`basis-full sm:basis-full md:basis-1/3 mb-4 ${isMobile < 640 && 'sm:basis-1/3'}`}>
                 <h1 className='text-lg mb-2 font-normal'>CONTACT US</h1>
                 <hr className='w-3/4 border border-solid border-gray-200 mb-2' />
-                <img src='./map.jpg' className='h-52 w-72 ml-4 hover:scale-105 transition-transform ease-in' />
+                <motion.img
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.5 }}
+                    src='./map.jpg' className='h-52 w-72 ml-4' />
                 <h1 className='text-base font-medium ml-4'>Centre For Development Of Advanced Computing</h1>
                 <h2 className='ml-4'>NIT Silchar Campus</h2>
                 <h2 className='ml-4'>Silchar - 788010</h2>
                 <h2 className='ml-4'>Assam(India)</h2>
                 <h2 className='ml-4'>Phone: +91 03842-242009</h2>
                 <h2 className='ml-4'>Fax: +91 03842-242009</h2>
-            </div>
+            </motion.div>
         </motion.main>
     )
 }

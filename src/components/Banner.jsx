@@ -4,11 +4,12 @@ import { motion } from 'framer-motion'
 const Banner = () => {
   return (
     <>
-        <motion.img
-        initial = {{opacity:0, y:50}}
-        animate = {{opacity:1, y:0}}
-        transition={{duration: 0.8}}
-        src='./banner.jpeg' alt='Banner' className='h-auto w-full'/>
+      <motion.img
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.9 }}
+        whileInView={{ opacity: 1 }}
+        src='./banner.jpeg' alt='Banner' className='h-auto w-full' />
     </>
   )
 }

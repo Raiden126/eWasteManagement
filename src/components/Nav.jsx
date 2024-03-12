@@ -4,9 +4,9 @@ import { faMagnifyingGlass, faBars, faUser, faBoxOpen, faCircleInfo } from '@for
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const StyledDiv = styled.div`
-  font-family: 'Madimi One', sans-serif;
-`;
+// const StyledDiv = styled.div`
+//   font-family: 'Madimi One', sans-serif;
+// `;
 
 const Nav = () => {
 
@@ -35,18 +35,19 @@ const Nav = () => {
 
     return (
         <motion.nav
-        initial = {{opacity: 0, y:50}}
-        animate = {{opacity: 1, y: 0}}
-        transition={{duration: 0.8}}
-        className='w-full h-14 bg-[#2A55E5] flex items-center md:justify-evenly'>
-            <StyledDiv
-                className='aspect-square w-14 ml-1 md:ml-0 flex justify-center items-center object-contain mix-blend-color-burn'
+            initial={{ opacity: 0, y: 1 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.9 }}
+            whileInView={{ opacity: 1 }}
+            className='w-full h-14 bg-[#2A55E5] flex items-center md:justify-evenly'>
+            <div
+                className='aspect-square w-14 ml-1 md:ml-0 flex justify-center items-center text-white'
             >
                 {/* <img src='./cdac-logo.svg'
                     alt='logo'
                 /> */}
                 <h1 className='text-sm '>E-Waste</h1>
-            </StyledDiv>
+            </div>
             <label className='ml-3 relative w-3/4 md:w-2/5 lg:w-2/4'>
                 <FontAwesomeIcon icon={faMagnifyingGlass}
                     className='absolute pl-2 text-slate-400 top-1/2 transform -translate-y-1/2' />
@@ -94,7 +95,6 @@ const Nav = () => {
                         </>
                     )}
                 </>)}
-
         </motion.nav>
     )
 }
