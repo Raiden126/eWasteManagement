@@ -30,9 +30,7 @@ const Nav = () => {
         return () => {
             window.addEventListener('resize', handleResize)
         }
-
     }, [])
-
     return (
         <motion.nav
             initial={{ opacity: 0, y: 1 }}
@@ -58,7 +56,7 @@ const Nav = () => {
                 />
             </label>
             {isMobile > 767 ?
-                (<>
+                (
                     <div className=' flex flex-row justify-center items-center'>
                         <label
                             className='border border-solid border-gray-300 rounded-3xl ml-2 h-8 w-32 bg-white hover:bg-black flex justify-center items-center'>
@@ -72,10 +70,9 @@ const Nav = () => {
                             className='border border-solid border-gray-300 rounded-3xl ml-2 h-8 w-40 text-center bg-white hover:bg-black flex justify-center items-center'>
                             <a href="/buyer" className='text-black md:text-sm sm:text-[10px] hover:text-white hover:bg-black'><FontAwesomeIcon icon={faBoxOpen} className='mr-2' />Become a Buyer</a>
                         </label>
-                    </div></>) :
+                    </div>) :
                 (<><FontAwesomeIcon icon={faBars} className='ml-2 mr-1 text-2xl' onClick={handleShowNav} />
                     {showNav && (
-                        <>
                             <div className="absolute inset-0 bg-black h-14 w-full bg-opacity-90 flex">
                                 <div className='basis-3/4 flex justify-evenly items-center'>
                                     <label className='border border-solid border-transparent rounded-md text-center text-xs bg-white h-6'>
@@ -92,7 +89,6 @@ const Nav = () => {
                                     <FontAwesomeIcon icon={faBars} className='ml-5 text-2xl text-white' onClick={handleHideNav} />
                                 </div>
                             </div>
-                        </>
                     )}
                 </>)}
         </motion.nav>
